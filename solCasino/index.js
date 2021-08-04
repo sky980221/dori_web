@@ -15,7 +15,7 @@ function handleGuessSubmit(e) {
   resultSpan.innerHTML = `
   You chose: ${userGuess},
   the machine chose: ${random}.<br />
-  <strong>${userGuess === random ? "You won!" : "You lost!"}</strong>
+  <strong>${userGuess === random ? "You won!" : "You lost!!"}</strong>
   `;
 }
 
