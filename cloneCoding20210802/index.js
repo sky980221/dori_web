@@ -1,29 +1,27 @@
-const loginForm = document.querySelector("#login-form")
-const loginInput = loginForm.querySelector("input");
-const greeting = document.querySelector("#greeting");
-const HIDDEN_CLASSNAME = "hidden";
-const USERNAME_KEY = "username";
+const num = document.querySelector("#num");
+const inputNum = document.querySelector("input");
+const showChoice = document.querySelector("#showChoice");
+const finalresult = document.querySelector("#finalresult");
+const submitting = document.querySelector("#submitting");
 
-function onLoginSubmit(event){
+function onCasino(event){
     event.preventDefault(); //submit하고 나서 새로고침 되는걸 막음
-    loginForm.classList.add(HIDDEN_CLASSNAME);
-    const username = loginInput.value;
-    localStorage.setItem("USERNAME_KEY",username);
-    paintGreetings(username);
-}
+    const randomNum = num.value;
+    const machineNum = Math.floor(math.random()*randomNum); //정수형태로 만들어줌 
+    const usernum = inputNum.value;
+    showChoice.innerText = 
+    `You chose: ${usernum}, the machine chose: ${machineNum}.`;
 
-function paintGreetings(username){
-    greeting.innerText = `Hello   ${username}`;
-    greeting.classList.remove(HIDDEN_CLASSNAME);
-}
-
-const savedUsername = localStorage.getItem(USERNAME_KEY);
-
-if(savedUsername === null){
-    loginForm.classList.remove(HIDDEN_CLASSNAME);
-    loginForm.addEventListener("submit",onLoginSubmit);
+if(userNum === machineNum){
+    finalresult.innerText = "You won!";
 }
 else{
-    paintGreetings(savedUsername);
+    finalresult.innerText = "You lost !";
 }
+}
+
+submitting.addEventListener("submit",onCasino);
+
+
+
 

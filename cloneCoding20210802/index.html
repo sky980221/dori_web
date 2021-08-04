@@ -7,16 +7,24 @@
   </head>
 
   <body>
-    <form class = "hidden" id = "login-form" >
-      <input
-        required
-        maxlength="15"
-        type = "text"
-        placeholder="What is your name?"
-      />
-      <input type="submit" value = "Log In"/>
+
+    <h1>Random Number Game</h1>
+    <form id = "Casino-form">
+      <h2>
+        <label for = "range">Generate a number between 0 and</label>
+        <input id= "range" type="number" minlength="1"/>
+      </h2>
+
+      <label for="guess">Guess the number:</label>
+      <input id="guess" type = "number" minlength="1"/>
+      <button>play!</button>
     </form>
-    <h1 id = "greeting" class= "hidden"></h1>
+
+    <div>
+      <span id="userNum" class ="hidden"></span>
+      <span id="machineNum" class ="hidden"></span>
+    </div>
+    <h3 id = "result" class = "hidden"></h3>
       <script src="index.js"></script>
   </body>
 </html>
